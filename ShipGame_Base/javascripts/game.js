@@ -1,4 +1,3 @@
-// js/game.js
 import { FIXED_DT, MAX_STEPS_PER_FRAME, FIXED_HZ, ENEMY_BASE_START, ENEMY_BASE_INC, ENEMY_BASE_EVERY_SEC } from './config.js';
 import { mountScreen } from './screen.js';
 import { createSpaceship } from './spaceship.js';

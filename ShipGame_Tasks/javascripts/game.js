@@ -1,4 +1,3 @@
-// js/game.js
 import { FIXED_DT, MAX_STEPS_PER_FRAME, FIXED_HZ, ENEMY_BASE_START, ENEMY_BASE_INC, ENEMY_BASE_EVERY_SEC, BULLET_SIZE_RATIO, BULLET_ASPECT, BULLET_SPEED_RATIO, BULLET_COOLDOWN, SCORE_MODE, SCORE_PER_FRAME, SCORE_PER_SECOND } from './config.js';
 import { mountScreen } from './screen.js';
 import { createSpaceship } from './spaceship.js';
@@ -18,16 +17,15 @@ export function createBullets(canvas) {
 
     shoot(fromX, fromY, shipW) {
       const { w, h } = this._size();
-      // spawn at ship's right edge (shoot to the right)
       const x = fromX + (shipW / 2) + (w / 2) + 2;
       const y = fromY;
 
-      const speed = BULLET_SPEED_RATIO * Math.min(canvas.width, canvas.height); // px/sec
+      const speed = BULLET_SPEED_RATIO * Math.min(canvas.width, canvas.height);
 
       this.list.push({
         x, y, w, h, alive: true,
         update(dt) {
-          this.x += speed * dt; // move right
+          this.x += speed * dt;
           if (this.x - this.w / 2 > canvas.width) this.alive = false;
         },
         render(ctx) {
