@@ -1,2 +1,3 @@
-# thematic game dev
-Thematic Game Development in Javascript
+# Thematic Game Development Seminar's Work - 2025
+
+Some desc...
