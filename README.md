@@ -6,8 +6,8 @@ Requirement:
 - Visual Studio Code
 - VS Code plugin: Live Server
 
-Download a zip file then extract it. Open extracted folder, select which project's **index.html** file then open with Visual Studio Code.
-If you had **Live Server** plugin installed, then you should have a button at bottom-right of program corner **"Go Live"**. Press it and it will open/run in your browser.
+Download a zip file then extract it. Open extracted folder, select which project's folder file then open with Visual Studio Code.
+If you had **Live Server** plugin installed, then you should have a button at bottom-right of program corner **"Go Live"**. Select index.html from tab view, press "Go Live" and it will open/run in your browser.
 
 *Reminder: Opening **index.html** to browser directly will not work. In future will be added a single html page for full control of everything without needing VS Code.*
 
