@@ -23,9 +23,9 @@ export class Ship {
     ctx.translate(this.x, this.y);
     ctx.fillStyle = this.color;
     ctx.beginPath();
-    ctx.moveTo(-this.w/2,  this.h/2);
-    ctx.lineTo( this.w/2,  0);
-    ctx.lineTo(-this.w/2, -this.h/2);
+    ctx.moveTo(-this.w / 2, this.h / 2);
+    ctx.lineTo(this.w / 2, 0);
+    ctx.lineTo(-this.w / 2, -this.h / 2);
     ctx.closePath();
     ctx.fill();
     ctx.restore();
@@ -45,17 +45,22 @@ export function clampYToHalf(y, halfIndex) {
 }
 
 export function keepInSameHalf(prevY, newY) {
-  const halfIndex = (prevY < BASE.HEIGHT) ? 0 : 1;
+  const halfIndex = prevY < BASE.HEIGHT ? 0 : 1;
   return clampYToHalf(newY, halfIndex);
 }
 
 export function transferAcrossHalves(y) {
   const half = BASE.HEIGHT;
-  return (y < half) ? (y + half) : (y - half);
+  return y < half ? y + half : y - half;
 }
 
 export function mirrorYAcrossMid(y) {
   const half = BASE.HEIGHT;
-  if (y < half) { const d = half - y; return half + d; }
-  else { const d = y - half; return half - d; }
+  if (y < half) {
+    const d = half - y;
+    return half + d;
+  } else {
+    const d = y - half;
+    return half - d;
+  }
 }

@@ -3,19 +3,18 @@ export class Input {
     this.keys = new Set();
     this.once = new Set();
 
-    // --- Keyboard ---
-    window.addEventListener("keydown", e => {
+    window.addEventListener("keydown", (e) => {
       const k = this._normalizeKey(e.key);
       this.keys.add(k);
       this.once.add(k);
     });
 
-    window.addEventListener("keyup", e => {
+    window.addEventListener("keyup", (e) => {
       const k = this._normalizeKey(e.key);
       this.keys.delete(k);
     });
 
-    document.addEventListener("pointerdown", e => {
+    document.addEventListener("pointerdown", (e) => {
       const btn = e.target.closest(".ctl-btn");
       if (!btn) return;
       e.preventDefault();
@@ -29,7 +28,7 @@ export class Input {
       }
     });
 
-    const endPointer = e => {
+    const endPointer = (e) => {
       const btn = e.target.closest(".ctl-btn");
       if (!btn) return;
       const key = (btn.getAttribute("data-key") || "").toLowerCase();
@@ -45,19 +44,16 @@ export class Input {
     document.addEventListener("pointerleave", endPointer);
   }
 
-  // Map WASD to arrow keys; normalize everything to lowercase
   _normalizeKey(k) {
     k = (k || "").toLowerCase();
     if (k === "w") return "arrowup";
     if (k === "a") return "arrowleft";
     if (k === "s") return "arrowdown";
     if (k === "d") return "arrowright";
-    // Space sometimes comes as ' ' in some browsers:
     if (k === " ") return " ";
     return k;
   }
 
-  // consume a one-shot key (true once per press)
   hit(k) {
     k = k.toLowerCase();
     const had = this.once.has(k);
@@ -65,7 +61,6 @@ export class Input {
     return had;
   }
 
-  // is the key currently being held?
   down(k) {
     return this.keys.has(k.toLowerCase());
   }

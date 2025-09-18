@@ -23,7 +23,7 @@ export class Enemy {
     ctx.save();
     ctx.translate(this.x, this.y);
     ctx.fillStyle = this.color;
-    ctx.fillRect(-this.w/2, -this.h/2, this.w, this.h);
+    ctx.fillRect(-this.w / 2, -this.h / 2, this.w, this.h);
     ctx.restore();
   }
 

@@ -22,20 +22,14 @@ export class Enemies {
     }
 
     for (const e of this.items) {
-      // drift left always
       e.step(dt);
-
-      // in quantum mode, allow user-driven collective vertical motion
       if (quantumMode && verticalDelta !== 0) {
         e.y += verticalDelta;
       }
-
-      // enemies can cross the midline; they wrap vertically top/bottom
       e.wrapVertical();
     }
 
-    // recycle enemies that exit left
-    this.items = this.items.filter(e => e.x + e.w/2 >= -20);
+    this.items = this.items.filter((e) => e.x + e.w / 2 >= -20);
   }
 
   draw(ctx) {

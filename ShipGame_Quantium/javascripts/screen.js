@@ -28,7 +28,7 @@ export class Screen {
     card.innerHTML = `
       <h2 id="death-title">Ship Destroyed</h2>
       <p id="death-reason">You collided with an enemy.</p>
-      <p class="hint">Press <b>R</b> to restart (or <b>Enter</b>/<b>Space</b>).</p>
+      <p class="hint">Press <b>R</b>/<b>Enter</b>/<b>Space</b> to restart.</p>
     `;
     this.deathTitle = card.querySelector("#death-title");
     this.deathReason = card.querySelector("#death-reason");
@@ -38,7 +38,10 @@ export class Screen {
     container.appendChild(wrap);
   }
 
-  resize(w, h) { this.canvas.width = w; this.canvas.height = h; }
+  resize(w, h) {
+    this.canvas.width = w;
+    this.canvas.height = h;
+  }
 
   clear(bg) {
     const { ctx, canvas } = this;
@@ -57,7 +60,9 @@ export class Screen {
     ctx.stroke();
   }
 
-  writeHUD(text) { this.hud.textContent = text; }
+  writeHUD(text) {
+    this.hud.textContent = text;
+  }
 
   showToast(text, ms = 2000) {
     this.toast.textContent = text;
@@ -74,5 +79,7 @@ export class Screen {
     this.deathWrap.style.display = "flex";
   }
 
-  hideDeath() { this.deathWrap.style.display = "none"; }
+  hideDeath() {
+    this.deathWrap.style.display = "none";
+  }
 }
