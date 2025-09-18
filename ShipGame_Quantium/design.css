@@ -1,0 +1,153 @@
+:root {
+  --bg: #141414;
+  --fg: #ddd;
+  --panel-bg: #0f0f10;
+  --panel-bd: #222;
+  --hud: #ddd;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, sans-serif;
+}
+
+#stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;        /* full screen center */
+  position: relative;   /* sidebar can anchor to this */
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Canvas */
+.screen-wrap { position: relative; }
+.game-canvas {
+  display: block;
+  width: min(96vw, 900px);
+  height: auto;
+  background: #101010;
+  border-radius: 10px;
+}
+
+/* Sidebar floats on the right */
+#controls {
+  position: absolute;
+  top: 20px;
+  right: -260px;          /* move it outside canvas edge */
+  width: 220px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-bd);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #ddd;
+}
+
+#controls .ctl-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+#controls .ctl-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#controls .ctl-list li { margin: 4px 0; opacity: 0.9; }
+
+html,
+body {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  margin: 0;
+  background: #2a2a2a;
+  color: #ddd;
+  font-family: system-ui, sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+#app {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.screen-wrap {
+  display: grid;
+  place-items: center;
+}
+
+.game-canvas {
+  display: block;
+  background: #141414;
+  border: none;
+  border-radius: 0;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.hud { 
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; 
+}
+.toast { 
+  position:absolute; 
+  left:50%; 
+  transform:translateX(-50%); 
+  top:12px; background:#222a; 
+  color:#fff; 
+  padding:8px 12px; 
+  border-radius:8px; 
+  font: 14px/1.2 system-ui, sans-serif; 
+}
+
+/* === Death overlay === */
+.death-wrap {
+  position:absolute;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  backdrop-filter: blur(2px);
+}
+
+.death-card {
+  background:#111e;
+  color:#fff;
+  padding:18px 22px;
+  border-radius:12px;
+  min-width: 320px;
+  max-width: 520px;
+  text-align:center;
+  box-shadow: 0 10px 30px #0008;
+}
+
+.death-card h2 {
+  margin:0 0 8px 0;
+  font: 600 22px/1.2 system-ui, sans-serif;
+}
+
+.death-card p {
+  margin:6px 0;
+  font: 14px/1.4 system-ui, sans-serif;
+  opacity:0.9;
+}
+
+.death-card .hint {
+  margin-top:12px;
+  font-size:13px;
+  opacity:0.85;
+}
