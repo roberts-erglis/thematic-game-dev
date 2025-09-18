@@ -16,6 +16,7 @@ Folder Name|Description|Done
 :- | :- | :-
 `ShipGame_Base` | A remake based of one Spaceship game [Python] in Javascript |✅
 `ShipGame_Tasks` | **ShipGame_Base** extention with additional functionality |❌
+`ShipGame_Quantium` | **ShipGame_Base** extention with quantium game logic |✅
 
 ## Progress Log
 Date|Description
