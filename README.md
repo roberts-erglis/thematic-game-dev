@@ -22,6 +22,8 @@ Folder Name|Description|Done
 Date|Description
 :- | :- 
 `10/09` | Added all work and published them in Github. Safety and source realibility purpose.
+`17/09` | Added new folder "ShipGame_Quantium" and their work.
+`18/09` | Fixed few issues within "ShipGame_Quantium".
 
 
 #### Ignore below this...
