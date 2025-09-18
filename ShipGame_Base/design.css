@@ -1,29 +1,39 @@
-:root {
-  --bg: #141414;
-  --fg: #ddd;
-  --midline: #3a3a3a;
-  --hud: #ddd;
-  --toast-bg: #222c;
-  --toast-fg: #fff;
+html,
+body {
+  height: 100%;
+  overscroll-behavior: none;
+
+
+
 }
 
-* { box-sizing: border-box; }
-html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); font-family: system-ui, sans-serif; }
-#app { display: flex; align-items: center; justify-content: center; padding: 12px; }
-
-.screen-wrap { position: relative; }
-.game-canvas { display:block; width: min(96vw, 900px); height: auto; background: #101010; border-radius: 10px; }
-
-.hud {
-  position:absolute; top:8px; right:12px; color:var(--hud);
-  font: 14px ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  text-shadow: 0 1px 0 #0008;
-  user-select: none;
+body {
+  margin: 0;
+  background: #2a2a2a;
+  color: #ddd;
+  font-family: system-ui, sans-serif;
+  display: grid;
+  place-items: center;
 }
 
-.toast {
-  position:absolute; left:50%; top:12px; transform:translateX(-50%);
-  background:var(--toast-bg); color:var(--toast-fg);
-  padding:8px 12px; border-radius:10px; font: 14px/1.2 system-ui, sans-serif;
-  display:none; white-space:nowrap; user-select:none;
+#app {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.screen-wrap {
+  display: grid;
+  place-items: center;
+
+
+}
+
+.game-canvas {
+  display: block;
+  background: #141414;
+  border: none;
+  border-radius: 0;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
