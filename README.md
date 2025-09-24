@@ -12,11 +12,10 @@ If you had **Live Server** plugin installed, then you should have a button at bo
 *Reminder: Opening **index.html** to browser directly will not work. In future will be added a single html page for full control of everything without needing VS Code.*
 
 ## Folder's Description
-Folder Name|Description|Done
-:- | :- | :-
-`ShipGame_Base` | A remake based of one Spaceship game [Python] in Javascript |✅
-`ShipGame_Tasks` | **ShipGame_Base** extention with additional functionality |❌
-`ShipGame_Quantium` | **ShipGame_Base** extention with quantium game logic |✅
+Folder Name|Description|Done|Demo
+:- | :- | :- | :-
+`ShipGame_Base` | A remake based of one Spaceship game [Python] in Javascript |✅ | Not yet
+`ShipGame_Quantium` | **ShipGame** extention with quantium game logic |✅ | Not yet
 
 ## Progress Log
 Date|Description
@@ -24,9 +23,10 @@ Date|Description
 `10/09` | Added all work and published them in Github. Safety and source realibility purpose.
 `17/09` | Added new folder "ShipGame_Quantium" and their work.
 `18/09` | Fixed few issues within "ShipGame_Quantium". Cleaning codes.
+`20/09` | Removed ShipGame_Tasks / Compined them into **ShipGame_Base**. Renamed **ShipGame_Base** to **ShipGame**
+`24/09` | Fixes. Updating code realible for web demo hosting.
 
 
 #### Ignore below this...
 `Name` | Desc |✅❌
-
 `dd/mm` | Desc
