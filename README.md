@@ -14,8 +14,8 @@ If you had **Live Server** plugin installed, then you should have a button at bo
 ## Folder's Description
 Folder Name|Description|Done|Demo
 :- | :- | :- | :-
-`ShipGame_Base` | A remake based of one Spaceship game [Python] in Javascript |✅ | Not yet
-`ShipGame_Quantium` | **ShipGame** extention with quantium game logic |✅ | Not yet
+`ShipGame_Base` | A remake based of one Spaceship game [Python] in Javascript. With additional functionality. |✅ | Not yet
+`ShipGame_Quantium` | **ShipGame** extention with quantium game logic. Based of references - no additional functionality. |✅ | Not yet
 
 ## Progress Log
 Date|Description
