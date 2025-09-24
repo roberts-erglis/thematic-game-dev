@@ -1,28 +1,29 @@
 const pressed = new Set();
-const shoot = new Set();
+const downOnce = new Set();
 
-const MOVE_KEYS = new Set([
-  'arrowup','arrowdown','arrowleft','arrowright','w','a','s','d'
-]);
-
-function keyName(e) {
-  if (e.code === 'Space') return 'space';
-  const k = e.key.toLowerCase();
+function normalizeKey(k) {
+  k = k.toLowerCase();
   if (k === ' ') return 'space';
   return k;
 }
 
+const relevant = new Set([
+  'arrowup', 'arrowdown', 'arrowleft', 'arrowright',
+  'w', 'a', 's', 'd',
+  'space', 'f', 'r',
+]);
+
 function onKeyDown(e) {
-  const k = keyName(e);
-  if (MOVE_KEYS.has(k) || k === 'space') {
-    if (!pressed.has(k)) shoot.add(k);
+  const k = normalizeKey(e.key);
+  if (relevant.has(k)) {
+    if (!e.repeat) downOnce.add(k);
     pressed.add(k);
     e.preventDefault();
   }
 }
 function onKeyUp(e) {
-  const k = keyName(e);
-  if (MOVE_KEYS.has(k) || k === 'space') {
+  const k = normalizeKey(e.key);
+  if (relevant.has(k)) {
     pressed.delete(k);
     e.preventDefault();
   }
@@ -38,18 +39,19 @@ export function getMoveVector() {
   if (pressed.has('arrowup') || pressed.has('w')) y -= 1;
   if (pressed.has('arrowdown') || pressed.has('s')) y += 1;
 
-  if (x || y) {
+  if (x !== 0 || y !== 0) {
     const len = Math.hypot(x, y);
     x /= len; y /= len;
   }
   return { x, y };
 }
 
-export function consumePress(key) {
-  const k = key.toLowerCase();
-  if (shoot.has(k)) {
-    shoot.delete(k);
-    return true;
-  }
+export function consumePress(keyName) {
+  const k = normalizeKey(keyName);
+  if (downOnce.has(k)) { downOnce.delete(k); return true; }
   return false;
+}
+
+export function isDown(keyName) {
+  return pressed.has(normalizeKey(keyName));
 }
